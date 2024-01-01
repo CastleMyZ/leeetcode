@@ -1,3 +1,5 @@
+package L_1_100;
+
 public class findNums_34 {
     class Solution {
         public int[] searchRange(int[] nums, int target) {

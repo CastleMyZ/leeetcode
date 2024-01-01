@@ -1,3 +1,5 @@
+package L_201_300;
+
 public class removeZero283 {
     class Solution {
         public void moveZeroes(int[] nums) {

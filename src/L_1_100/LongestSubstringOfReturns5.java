@@ -1,3 +1,5 @@
+package L_1_100;
+
 public class LongestSubstringOfReturns5 {
     public String longestPalindrome(String s) {
         int n = s.length();

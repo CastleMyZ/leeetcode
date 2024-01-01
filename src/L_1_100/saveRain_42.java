@@ -1,3 +1,5 @@
+package L_1_100;
+
 public class saveRain_42 {
     /**
      * 解法一：动态规划

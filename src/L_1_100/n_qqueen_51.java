@@ -1,3 +1,5 @@
+package L_1_100;
+
 import java.util.*;
 public class n_qqueen_51 {
     class Solution {

@@ -1,3 +1,5 @@
+package L_1_100;
+
 public class SearchForTheInsertionLocation_35 {
     class Solution {
         public int searchInsert(int[] nums, int target) {
