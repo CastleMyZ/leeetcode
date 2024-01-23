@@ -1,9 +1,9 @@
-package Acwing;
+package Acwing.searchAndGraph;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class gravityOfTheTree_846 {
+public class 树的重心_846 {
 
     static int n, idx, ans = Integer.MAX_VALUE;
     static int[] e, ne, h;

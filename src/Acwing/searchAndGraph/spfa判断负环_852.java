@@ -1,13 +1,14 @@
-package Acwing;
+package Acwing.searchAndGraph;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class spfa求最短路_851 {
+public class spfa判断负环_852 {
     static int n, m, idx, N = 100010;
-    static int[] ne = new int[N], e = new int[N], w = new int[N], h = new int[N], dis = new int[N];
+    static int[] ne = new int[N], e = new int[N], w = new int[N],
+            h = new int[N], dis = new int[N], cnt = new int[N];
     static boolean[] state = new boolean[N];
 
     public static void add(int a, int b, int c) {
@@ -27,20 +28,19 @@ public class spfa求最短路_851 {
             int z = in.nextInt();
             add(x, y, z);
         }
-        int t = spfa();
-        if (t == 0x3f3f3f3f) {
-            System.out.println("impossible");
+        if (!spfa()) {
+            System.out.println("No");
         } else {
-            System.out.println(dis[n]);
+            System.out.println("Yes");
         }
     }
 
-    private static int spfa() {
-        Arrays.fill(dis, 0x3f3f3f3f);
-        dis[1] = 0;
+    private static boolean spfa() {
         Queue<Integer> q = new LinkedList<>();
-        q.offer(1);
-        state[1] = true;
+        for (int i = 1;i <= n;i ++) {
+            state[i] = true;
+            q.offer(i);
+        }
         while (!q.isEmpty()) {
             int t = q.poll();
             state[t] = false;
@@ -48,13 +48,15 @@ public class spfa求最短路_851 {
                 int j = e[i];
                 if (dis[j] > dis[t] + w[i]) {
                     dis[j] = dis[t] + w[i];
+                    cnt[j] = cnt[t] + 1;
+                    if (cnt[j] >= n)    return true;
                     if (!state[j]) {
-                        q.offer(j);
                         state[j] = true;
+                        q.offer(j);
                     }
                 }
             }
         }
-        return dis[n];
+        return false;
     }
 }

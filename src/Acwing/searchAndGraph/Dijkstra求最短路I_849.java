@@ -1,4 +1,4 @@
-package Acwing;
+package Acwing.searchAndGraph;
 
 import java.io.BufferedReader;
 import java.util.LinkedList;
